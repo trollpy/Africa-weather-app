@@ -1,0 +1,256 @@
+/* Google Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2980b9;
+    --text-color: #333;
+    --light-text: #777;
+    --background: #f9f9f9;
+    --card-bg: #fff;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --border-radius: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: var(--background);
+    background-size: cover;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    opacity: 0.7;;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+    text-align: center;
+    
+}
+
+header h1 {
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    text-shadow: #f9f9f9 1px 1px 2px;
+    border-bottom: var(--primary-color) 4px solid;
+   
+}
+
+.search-box {
+    display: flex;
+    width: 100%;
+    max-width: 500px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    
+    
+}
+
+.search-box input {
+    flex: 1;
+    padding: 0.3rem 1rem;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    
+}
+
+.search-box button {
+    color: var(--primary-color);
+    background-color: rgb(231, 222, 222);
+    font-size: 1.2rem;
+    border: none;    
+    padding: 0 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-box button:hover {
+    background-color: var(--secondary-color);
+    transition: background-color 0.3s;
+    color: white;
+    font-weight: 600;
+    font-size: 1.2rem;
+
+}
+
+.current-weather {
+    background-color: var(--card-bg);
+    opacity: 0.6;
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+}
+
+.weather-info {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+
+.location h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.location p {
+    color: var(--light-text);
+    font-size: 1.2rem;
+}
+
+.weather-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+
+.temperature h2 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.high-low {
+    display: flex;
+    gap: 1rem;
+    color: var(--light-text);
+}
+
+.weather-condition {
+    text-align: center;
+}
+
+.icon-container {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.icon-container img {
+    width: 100%;
+    height: 100%;
+}
+
+.additional-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: rgba(52, 152, 219, 0.1);
+    border-radius: var(--border-radius);
+}
+
+.info-item i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.forecast-container {
+    margin-bottom: 2rem;
+}
+
+.forecast-container h3 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.forecast-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+}
+
+.forecast-card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.forecast-card .day {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.forecast-card .icon-small {
+    width: 50px;
+    height: 50px;
+    margin: 0.5rem auto;
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    color: var(--light-text);
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+    .weather-info {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .weather-details {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .temperature h2 {
+        font-size: 2.5rem;
+    }
+    
+    .additional-info {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .search-box {
+        flex-direction: column;
+    }
+    
+    .search-box button {
+        width: 100%;
+        padding: 0.8rem;
+    }
+    
+    .weather-details {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .forecast-cards {
+        grid-template-columns: 1fr;
+    }
+}
